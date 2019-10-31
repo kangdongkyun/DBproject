@@ -1,0 +1,25 @@
+import java.sql.Connection;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class DBmain extends Application{
+	@Override
+	public void start(Stage stage) {
+		VBox vbox = new VBox();
+		
+		Scene scene = new Scene(vbox);
+		stage.setScene(scene);
+		stage.setTitle("Dream Home 02");
+		stage.show();
+	}
+	public static void main(String[] args) {
+		launch(args);
+		//Connection con = MyConnection.makeConnection();
+		
+		
+	}
+}

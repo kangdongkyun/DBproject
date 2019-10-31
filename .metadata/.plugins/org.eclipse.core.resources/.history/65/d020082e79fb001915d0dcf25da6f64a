@@ -1,0 +1,25 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MyConnection {
+	
+	public static Connection makeConnection() {
+		try {
+			// load and register
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//			String url = protocal://HostName:portNumber; databasesName
+			String url = "jdbc:sqlserver://A205-07\\SQLEXPRESS2:1433; test01;sa;1111";
+			Connection con = DriverManager.getConnection(url);
+			System.out.println("Connection is established");
+			return con;
+				
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return null;
+		}catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+}
